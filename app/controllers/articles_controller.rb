@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_restaurant, only: [:find, :edit, :update, :destroy]
+  before_action :set_article, only: [:find, :edit, :update, :destroy]
   def index
     @articles = Article.all
   end
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :content)
   end
 
-  def set_restaurant
+  def set_article
     @article = Article.find(params[:id])
   end
 end
